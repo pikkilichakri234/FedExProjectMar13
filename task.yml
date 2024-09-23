@@ -13,7 +13,7 @@
     - name : Build image
       command: docker build -t omparameswara123/om .
     - name : Push Docker Image
-      command: docker push madandevops2024/flipkartapp
+      command: docker push omparameswara123/om
 - name: Deployment into Kubernetes Cluster
   hosts: eks
   tasks:
