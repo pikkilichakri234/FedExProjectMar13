@@ -5,13 +5,13 @@
     - name: Copy Dockerfile
       copy:
        src: Dockerfile
-       dest: /home/ansadmin
+       dest: /home/om-ansible
     - name: Copy WAR file
       copy:
        src: target
        dest: /home/ansadmin
     - name : Build image
-      command: docker build -t madandevops2024/flipkartapp .
+      command: docker build -t omparameswara123/om .
     - name : Push Docker Image
       command: docker push madandevops2024/flipkartapp
 - name: Deployment into Kubernetes Cluster
@@ -20,11 +20,11 @@
    - name: 
      copy:
        src: DeploymentIntoK8sCluster.yml
-       dest: /home/ansadmin
+       dest: /home/om-ansible
    - name: 
      copy:
        src: LB-Service.yml
-       dest: /home/ansadmin
+       dest: /home/om-ansible
    - name : K8S Deployment
      command: kubectl apply -f DeploymentIntoK8sCluster.yml
    - name : LB Service
